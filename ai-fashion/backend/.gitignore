@@ -1,7 +1,21 @@
+# Python
 venv/
 __pycache__/
 *.pyc
-faiss_index/
+*.pyo
 .env
+
+# Generated indexes — rebuild on first run
+faiss_index/
+
+# Dataset images — too large for git
 data/images/
+
+# Frontend deps
+frontend/node_modules/
+frontend/dist/
+
+# Misc
 *.zip
+.DS_Store
+Thumbs.db

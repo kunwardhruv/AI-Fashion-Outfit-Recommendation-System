@@ -68,29 +68,37 @@ User Chat Input (React Frontend)
 ai-fashion/
 ├── backend/
 │   ├── app/
-│   │   ├── config.py       # Constants + hybrid search weights + category→role mapping
-│   │   ├── embeddings.py   # Multi-modal: FAISS text + CLIP image + BM25 hybrid search
-│   │   ├── llm_service.py  # Groq: intent extraction + explanation
-│   │   ├── recommender.py  # 2-tier engine + NetworkX compatibility graph
-│   │   └── main.py         # FastAPI routes incl. /api/compatibility/{id}
+│   │   ├── __init__.py
+│   │   ├── config.py
+│   │   ├── embeddings.py
+│   │   ├── llm_service.py
+│   │   ├── recommender.py
+│   │   └── main.py
 │   ├── data/
 │   │   ├── products.csv
 │   │   ├── outfits.csv
-│   │   └── images/         # (ajio/ myntra/ nykaa/)
-│   ├── faiss_index/        # Auto-generated on first run
-│   │   ├── text.index      # sentence-transformers FAISS
-│   │   ├── image.index     # CLIP FAISS
-│   │   ├── bm25.pkl
-│   │   └── product_ids.pkl
+│   │   └── images/         # (ajio/ myntra/ nykaa/) — gitignored
+│   ├── faiss_index/        # Auto-generated — gitignored
+│   ├── .env.example
 │   └── requirements.txt
-└── frontend/
-    └── src/
-        ├── App.jsx
-        ├── components/
-        │   ├── ProductCard.jsx          # Score breakdown (text/image/BM25) on hover
-        │   ├── OutfitRecommendation.jsx # Source badge + graph pick indicators
-        │   └── UserProfilePanel.jsx
-        └── services/api.js
+├── frontend/
+│   ├── src/
+│   │   ├── App.jsx
+│   │   ├── index.css
+│   │   ├── main.jsx
+│   │   ├── components/
+│   │   │   ├── ProductCard.jsx
+│   │   │   ├── OutfitRecommendation.jsx
+│   │   │   └── UserProfilePanel.jsx
+│   │   └── services/
+│   │       └── api.js
+│   ├── index.html
+│   ├── package.json
+│   ├── vite.config.js
+│   ├── tailwind.config.js
+│   └── postcss.config.js
+├── .gitignore
+└── README.md
 ```
 
 ---
